@@ -48,6 +48,7 @@ class Base(Configuration):
         'rest_framework',
         'health_check',
         'health_check.db',
+        'health_check.cache',
 
         "api",
         "dictionary",
@@ -96,6 +97,16 @@ class Base(Configuration):
             "USER": env.str("DB_USER", default="demouser"),
             "PASSWORD": env.str("DB_PASSWORD"),
             "CHARSET": "utf8mb4",
+        }
+    }
+
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": f"redis://{env.str('REDIS_HOST')}:{env.str('REDIS_PORT')}/{env.str('REDIS_CACHE_DB', default='0')}",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            },
         }
     }
 
