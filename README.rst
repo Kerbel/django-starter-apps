@@ -23,7 +23,7 @@ Content
     - `django-storages <https://django-storages.readthedocs.io/en/latest/>`_ with S3 backend setup
     - `django-structlog <https://github.com/jrobichaud/django-structlog>`_
 - **cache** -> basic project + redis cache
-- **offline-workers** -> basic project + redis cache + celery configured to run with redis broker
+- **celery_redis** -> basic project + redis cache + celery configured to run with redis broker
 
 
 How to use
