@@ -9,3 +9,6 @@ requests==2.23.0
 structlog==20.1.0
 django-structlog==1.5.2
 django-redis==4.11.0
+celery==4.4.6
+django-celery-results==1.2.1
+
